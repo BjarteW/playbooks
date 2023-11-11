@@ -1,14 +1,4 @@
 nsible-semaphore/semaphore/vendor/github.com/gorilla/handlers/proxy_headers.go:59 +0x144
 net/http.HandlerFunc.ServeHTTP(0x3b?, {0x2300ec0?, 0xc0002b02a0?}, 0x72?)
 	/usr/local/go/src/net/http/server.go:2109 +0x2f
-github.com/ansible-semaphore/semaphore/cli/cmd.cropTrailingSlashMiddleware.func1({0x2300ec0?, 0xc0002b02a0?}, 0xc0004dd300?)
-	/go/src/github.com/ansible-semaphore/semaphore/cli/cmd/server.go:27 +0xf7
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x2300ec0?, 0xc0002b02a0?}, 0x712b54?)
-	/usr/local/go/src/net/http/server.go:2109 +0x2f
-net/http.serverHandler.ServeHTTP({0x22fecc0?}, {0x2300ec0, 0xc0002b02a0}, 0xc0004dd300)
-	/usr/local/go/src/net/http/server.go:2947 +0x30c
-net/http.(*conn).serve(0xc0008260a0, {0x23017d8, 0xc000812e70})
-	/usr/local/go/src/net/http/server.go:1991 +0x607
-created by net/http.(*Server).Serve
-	/usr/local/go/src/net/http/server.go:3102 +0x4db
-ERRO[0083] illegal base64 data at input byte 40         
+github.com/an
