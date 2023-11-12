@@ -1,6 +1,7 @@
 ---
 - name: Get update status
   hosts: host
+  remote_user: bwetteland
 
   tasks:
   - name: Update all
