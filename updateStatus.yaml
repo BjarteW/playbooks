@@ -47,7 +47,7 @@
 
   # copy over files
   - name: CP kiosk scripts
-    ansible.builtin.git: 
+    ansible.builtin.get_url: 
       url: https://raw.githubusercontent.com/BjarteW/playbooks/main/gnome-kiosk-script
       dest: /home/kiosk/.local/bin/gnome-kiosk-script
       group: kiosk
