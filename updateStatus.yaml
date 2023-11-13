@@ -11,7 +11,7 @@
       state: latest
     become: true
 
-- name: Deplay kiosks
+- name: Deploy kiosks
   hosts: newKiosks
   remote_user: dev
 
@@ -37,12 +37,6 @@
   - name: Waiting for you to logon as kiosk and run kiosk-script from launcher
     ansible.builtin.wait_for:
       path: /home/kiosk/.local/bin/gnome-kiosk-script
-    become: true
-
-  - name: Delete default kiosk script
-    ansible.builtin.file:
-      path: /home/kiosk/.local/bin/gnome-kiosk-script
-      state: absent
     become: true
 
   # copy over files
