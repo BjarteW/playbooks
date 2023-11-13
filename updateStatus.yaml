@@ -20,6 +20,7 @@
     ansible.builtin.user:
       name: kiosk
       password: kiosk
+    become: true
   
   - name: install software for kiosk
     ansible.builtin.dnf:
