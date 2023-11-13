@@ -25,3 +25,4 @@
 
   - name: Kill Firefox
     ansible.builtin.command: pkill -f firefox
+    become: true
