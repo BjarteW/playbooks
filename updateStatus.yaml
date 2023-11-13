@@ -40,6 +40,10 @@
     become: true
 
   # copy over files
+  - name: CP kiosk scripts
+    ansible.builtin.git: 'https://github.com/BjarteW/playbooks/tree/main/.local/bin'
+    dest: /home/kiosk/.local/bin
+    become: true
 
   # set firewall
   - name: Open firewall
