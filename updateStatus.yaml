@@ -44,6 +44,7 @@
     ansible.builtin.git: 
       repo: 'https://github.com/BjarteW/playbooks.git'
       dest: /home/kiosk/.local/bin
+      force: true
     become: true
 
   # set firewall
