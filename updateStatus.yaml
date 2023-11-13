@@ -37,7 +37,7 @@
 
   # set firewall
   - name: Open firewall
-    ansible.builtin.raw: sudo firewall-cmd --add-service=cockpit --permanent
+    ansible.builtin.raw: firewall-cmd --add-service=cockpit --permanent
     become: true
 
   - name: Set Zabbix-agent service
