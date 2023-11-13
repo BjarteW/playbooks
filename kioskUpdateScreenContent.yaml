@@ -23,4 +23,4 @@
     become: true
 
   - name: Kill Firefox
-    ansible.builtin.raw: "pkill -f firefox"
+    shell: "pkill -f firefox"
