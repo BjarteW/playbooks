@@ -4,7 +4,7 @@
   hosts: kiosks
   remote_user: dev
 
-
+  tasks:
   # copy over files
   - name: CP gnome-kiosk-script
     ansible.builtin.get_url: 
