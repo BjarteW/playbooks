@@ -45,6 +45,7 @@
       repo: 'https://github.com/BjarteW/playbooks.git'
       dest: /home/kiosk/.local/bin
       force: true
+      clone: true
     become: true
 
   # set firewall
