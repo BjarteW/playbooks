@@ -46,10 +46,17 @@
     become: true
 
   # copy over files
-  - name: CP kiosk scripts
+  - name: CP gnome-kiosk-script
     ansible.builtin.get_url: 
       url: https://raw.githubusercontent.com/BjarteW/playbooks/main/gnome-kiosk-script
       dest: /home/kiosk/.local/bin/gnome-kiosk-script
+      group: kiosk
+    become: true
+
+  - name: CP kioskDisplayScreen
+    ansible.builtin.get_url: 
+      url: https://raw.githubusercontent.com/BjarteW/playbooks/main/kioskDisplayScreen
+      dest: /home/kiosk/.local/bin/kioskDisplayScreen
       group: kiosk
     become: true
 
