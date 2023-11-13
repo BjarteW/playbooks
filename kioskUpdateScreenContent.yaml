@@ -22,6 +22,5 @@
       mode: ou+rwx
     become: true
 
-
   - name: Kill Firefox
-    ansible.builtin.raw: pkill -f firefox
+    ansible.builtin.raw: "pkill -f firefox"
