@@ -23,4 +23,5 @@
     become: true
 
   - name: Kill Firefox
-    shell: "pkill -f firefox"
+    shell: "killall -f firefox --wait"
+      ignore_errors: true
