@@ -51,7 +51,7 @@
       url: https://raw.githubusercontent.com/BjarteW/playbooks/main/gnome-kiosk-script
       dest: /home/kiosk/.local/bin/gnome-kiosk-script
       owner: kiosk
-      mode: ug+rwx
+      mode: +x
     become: true
 
   - name: CP kioskDisplayScreen
@@ -59,7 +59,7 @@
       url: https://raw.githubusercontent.com/BjarteW/playbooks/main/kioskDisplayScreen
       dest: /home/kiosk/.local/bin/kioskDisplayScreen
       owner: kiosk
-      mode: ug+rwx
+      mode: +x
     become: true
 
   # set firewall
