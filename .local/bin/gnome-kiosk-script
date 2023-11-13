@@ -1,0 +1,19 @@
+#!/bin/sh
+
+
+
+sleep 5.0 
+if [ ! "$( pgrep -fl barrierc )" ] # client
+#if [ ! "$( pgrep -fl barriers )" ] # Server
+then
+	barrierc --disable-crypto --daemon 10.86.52.46
+	#barriers -c /home/kiosk/.barriers.conf --daemon --disable-crypto
+fi
+
+if [ ! "$( pgrep -fl kioskDisplayScreen1 )" ]
+then
+	~/.local/bin/kioskDisplayScreen1 & disown
+fi
+
+sleep 1.0
+exec "$0" "$@"

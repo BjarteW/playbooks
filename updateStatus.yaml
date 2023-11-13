@@ -34,10 +34,10 @@
     become: true
 
   # Run kiosk first time
-  - name: Init kiosk on user kiosk
-    ansible.builtin.raw: /usr/bin/gnome-kiosk
+  - name: Waiting for you to logon as kiosk and run kiosk-script from launcher
+    ansible.builtin.wait_for:
+      path: /home/kiosk/.local/bin/gnome-kiosk-script
     become: true
-    become_user: kiosk
 
   # copy over files
 

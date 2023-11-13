@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# TMAxQdGw
+# Home
+url="https://norled.no"
+#
+# TripTrap 1
+# url="https://triptrap.norled.no/direct-login/645356dc-6108-444c-a1e2-b456c8c354cc/auto"
+#
+# Triptrap 2
+# url="https://triptrap.norled.no/direct-login/645357fe-6288-4545-aafa-2b616fa3061d/auto"
+#
+#Display nb 1 
+# url="https://grafana.norled.no/public-dashboards/2fcc81a202114cb2a018111fa89c0447&kiosk"
+# url="https://grafana.norled.no/d/b88e5190-41c2-477a-9974-48c209331ab6/display1-energy?orgId=1&kiosk"
+#
+#Display nb 2
+# url="https://grafana.norled.no/public-dashboards/b74ecef889ee4ff0b2679dc877a0b8e1?orgId=1&refresh=5s&kiosk"
+# url="https://grafana.norled.no/d/c040a934-7046-4d2c-a705-7d1ac0396ba5/display-2?orgId=1&kiosk"
+#
+#Display nb 3
+# url="https://grafana.norled.no/public-dashboards/cfb98a8ecdc74d8dbed4a9b8641012dd&kiosk"
+# url="https://grafana.norled.no/d/da7fee3d-9497-4e18-8b48-da870024e0ea/display-3?orgId=1&kiosk"
+#
+#Display nb 4
+# url="https://grafana.norled.no/public-dashboards/3e99f0429d34401ea5216ad332b194f0&kiosk"
+# url="https://grafana.norled.no/d/a3da309e-4b99-480a-b84b-051c166d998b/display-4-blueflow-ferjer?orgId=1&kiosk"
+#
+#Display nb 5
+# url="https://grafana.norled.no/public-dashboards/27273c881e754ab7aafe2c07e2f06a48&kiosk"
+# url="https://grafana.norled.no/d/bde623b7-6717-411c-90d3-a4d6d9946499/display-5-blueflow-hsc?orgId=1&kiosk"
+#
+#Display nb 6
+# url="https://grafana.norled.no/public-dashboards/613ef1034c734d12998c5a0ce279be72&kiosk"
+# url="https://grafana.norled.no/d/fb935402-8cea-4fe2-ae4f-03b40ce10f01/display-6?orgId=1&kiosk"
+#
+#Display nb 7
+# url="https://grafana.norled.no/public-dashboards/3616ea4a535d4956b7f50719fb363e35&kiosk"
+# url="https://grafana.norled.no/d/ee9f4303-e402-49b9-aaf7-c7e059789d0f/display-7?orgId=1&kiosk"
+#
+#Display nb 8
+# url="https://grafana.norled.no/public-dashboards/229d3260fb074cf5b8ac400f1c7f227e&kiosk"
+# url="https://grafana.norled.no/d/ef3b9654-4d09-455b-9915-21118002f14a/display-8?orgId=1&kiosk"
+#
+#Display nb 9
+# url="https://grafana.norled.no/public-dashboards/086825c97ee246ddaa8044af6f66a034&kiosk"
+# url="https://grafana.norled.no/d/a2ec2ca8-4445-4607-a922-3960379b1f01/display-9-opplag?orgId=1&kiosk"
+#
+#Display nb 10
+# url="https://grafana.norled.no/public-dashboards/086825c97ee246ddaa8044af6f66a034&kiosk"
+# url="https://grafana.norled.no/d/f31fa063-b87e-4ed0-b9bd-ab00d896c7e3/display-10?orgId=1&kiosk"
+
+
+
+firefox -new-instance -width 100 -height 100 -kiosk $url
