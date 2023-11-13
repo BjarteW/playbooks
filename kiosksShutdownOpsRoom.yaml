@@ -1,8 +1,8 @@
 ---
 
 - name: Get update status
-  hosts: host
-  remote_user: bwetteland
+  hosts: kiosksOpsRoom
+  remote_user: dev
 
   tasks:
   - name: Update all
@@ -10,3 +10,6 @@
       name: "*"
       state: latest
     become: true
+
+  - name: Shutdown
+    ansible.builtin.command: shutdown

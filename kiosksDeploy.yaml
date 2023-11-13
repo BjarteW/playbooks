@@ -1,0 +1,65 @@
+---
+
+- name: Deploy kiosks
+  hosts: newKiosks
+  remote_user: dev
+
+  tasks:
+  - name: Create user
+    ansible.builtin.user:
+      name: kiosk
+      password: $6$kCXT94liI7mvzegq$E52QtYc7p5yNm6kpW1ZVBl.oS8ycHDSJ61juLmF/IMfDIK/ym0FJb1/sQ2TGWeqQvW.gdUrGDaXNsMnpC4mqE/
+    become: true
+  
+  - name: install software for kiosk
+    ansible.builtin.dnf:
+      name: 
+        - gnome-kiosk
+        - gnome-kiosk-script-session
+        - zabbix-agent
+        - barrier
+        - cockpit
+      state: latest
+    become: true
+
+  # Run kiosk first time
+  - name: Waiting for you to logon as kiosk and run kiosk-script from launcher
+    ansible.builtin.wait_for:
+      path: /home/kiosk/.local/bin/gnome-kiosk-script
+    become: true
+
+  # copy over files
+  - name: CP gnome-kiosk-script
+    ansible.builtin.get_url: 
+      url: https://raw.githubusercontent.com/BjarteW/playbooks/main/gnome-kiosk-script
+      dest: /home/kiosk/.local/bin/gnome-kiosk-script
+      owner: kiosk
+      mode: ou+rwx
+    become: true
+
+  - name: CP kioskDisplayScreen
+    ansible.builtin.get_url: 
+      url: https://raw.githubusercontent.com/BjarteW/playbooks/main/kioskDisplayScreen
+      dest: /home/kiosk/.local/bin/kioskDisplayScreen1
+      owner: kiosk
+      mode: ou+rwx
+    become: true
+
+  # set firewall
+  - name: Open firewall
+    ansible.builtin.raw: firewall-cmd --add-service=cockpit --permanent
+    become: true
+
+  - name: Set Zabbix-agent service
+    ansible.builtin.service:
+      name: zabbix-agent
+      enabled: yes
+      state: started
+    become: true
+
+  - name: Set cockpit service
+    ansible.builtin.service:
+      name: cockpit.socket
+      enabled: yes
+      state: started
+    become: true

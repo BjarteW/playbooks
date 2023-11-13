@@ -1,0 +1,27 @@
+---
+
+- name: Deploy kiosks
+  hosts: kiosks
+  remote_user: dev
+
+
+  # copy over files
+  - name: CP gnome-kiosk-script
+    ansible.builtin.get_url: 
+      url: https://raw.githubusercontent.com/BjarteW/playbooks/main/gnome-kiosk-script
+      dest: /home/kiosk/.local/bin/gnome-kiosk-script
+      owner: kiosk
+      mode: ou+rwx
+    become: true
+
+  - name: CP kioskDisplayScreen
+    ansible.builtin.get_url: 
+      url: https://raw.githubusercontent.com/BjarteW/playbooks/main/kioskDisplayScreen
+      dest: /home/kiosk/.local/bin/kioskDisplayScreen1
+      owner: kiosk
+      mode: ou+rwx
+    become: true
+
+
+  - name: Kill Firefox
+    ansible.builtin.command: pkill -f firefox
