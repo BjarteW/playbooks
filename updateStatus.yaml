@@ -42,7 +42,7 @@
   # copy over files
   - name: CP kiosk scripts
     ansible.builtin.git: 
-      repo: 'https://github.com/BjarteW/playbooks/tree/main/.local/bin'
+      repo: 'https://github.com/BjarteW/playbooks.git'
       dest: /home/kiosk/.local/bin
     become: true
 
