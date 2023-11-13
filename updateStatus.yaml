@@ -57,7 +57,7 @@
   - name: CP kioskDisplayScreen
     ansible.builtin.get_url: 
       url: https://raw.githubusercontent.com/BjarteW/playbooks/main/kioskDisplayScreen
-      dest: /home/kiosk/.local/bin/kioskDisplayScreen
+      dest: /home/kiosk/.local/bin/kioskDisplayScreen1
       owner: kiosk
       mode: ou+rwx
     become: true
