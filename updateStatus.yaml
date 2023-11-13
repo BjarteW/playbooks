@@ -19,7 +19,7 @@
   - name: Create user
     ansible.builtin.user:
       name: kiosk
-      password: kiosk
+      password: $6$kCXT94liI7mvzegq$E52QtYc7p5yNm6kpW1ZVBl.oS8ycHDSJ61juLmF/IMfDIK/ym0FJb1/sQ2TGWeqQvW.gdUrGDaXNsMnpC4mqE/
     become: true
   
   - name: install software for kiosk
