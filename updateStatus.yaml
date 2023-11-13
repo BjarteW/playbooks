@@ -51,6 +51,7 @@
       repo: 'https://github.com/BjarteW/playbooks.git'
       dest: /home/kiosk/.local/bin
       clone: true
+      version: main
     become: true
     become_user: kiosk
 
