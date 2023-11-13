@@ -45,9 +45,11 @@
       name: zabbix-agent
       enabled: yes
       state: started
+    become: true
 
   - name: Set cockpit service
     ansible.builtin.service:
       name: cockpit.socket
       enabled: yes
       state: started
+    become: true
