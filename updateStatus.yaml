@@ -39,14 +39,20 @@
       path: /home/kiosk/.local/bin/gnome-kiosk-script
     become: true
 
+  - name: Delete default kiosk script
+    ansible.builtin.file:
+      path: /home/kiosk/.local/bin/gnome-kiosk-script
+      state: absent
+    become: true
+
   # copy over files
   - name: CP kiosk scripts
     ansible.builtin.git: 
       repo: 'https://github.com/BjarteW/playbooks.git'
       dest: /home/kiosk/.local/bin
-      force: true
       clone: true
     become: true
+    become_user: kiosk
 
   # set firewall
   - name: Open firewall
