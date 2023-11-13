@@ -48,11 +48,10 @@
   # copy over files
   - name: CP kiosk scripts
     ansible.builtin.git: 
-      repo: 'https://github.com/BjarteW/playbooks.git'
-      dest: /home/kiosk/.local/bin
-      version: main
+      url: https://raw.githubusercontent.com/BjarteW/playbooks/main/gnome-kiosk-script
+      dest: /home/kiosk/.local/bin/gnome-kiosk-script
+      group: kiosk
     become: true
-    become_user: kiosk
 
   # set firewall
   - name: Open firewall
