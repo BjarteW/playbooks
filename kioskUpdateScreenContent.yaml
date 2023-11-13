@@ -23,5 +23,4 @@
     become: true
 
   - name: Kill Firefox
-    shell: "killall -f firefox --wait"
-      ignore_errors: true
+    ansible.builtin.shell: "killall -f firefox"
