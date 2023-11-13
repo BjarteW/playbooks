@@ -33,6 +33,11 @@
       state: latest
     become: true
 
+  # Run kiosk first time
+  - name: Init kiosk on user kiosk
+    ansible.builtin.raw: /usr/bin/gnome-kiosk
+    become_user: kiosk
+
   # copy over files
 
   # set firewall
